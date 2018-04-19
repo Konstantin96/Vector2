@@ -9,8 +9,9 @@ int main() {
 	in.open("read.txt");
 	double xa, ya, xb, yb, xc, yc, xd, yd;
 	double xCenter, yCenter, sideA, sideB;
-	Rectangle *p;
-	p = new Rectangle[5];
+	Vector p(2);
+	/*Rectangle *p;
+	p = new Rectangle[5];*/
 	
 	int i = 0; 
 	if (!in) {
@@ -23,18 +24,16 @@ int main() {
 			Rectangle R(xCenter, yCenter, sideA, sideB);
 
 
-			p[i++] = R;
+			p.push_back(R);
 		}}
 	
-	for (int k = 0; k < i; k++) {
-	
-
-	p[k].resize(2, 10);
+	for (int k = 0; k < p.size(); k++) {
+	//p.at(k).resize(2, 10);
 		
-		out << p[k].getXA() << "\t" << p[k].getYA() << "\t" <<
-			p[k].getXB() << "\t" << p[k].getYB() << "\t" <<
-			p[k].getXC() << "\t" << p[k].getYC() << "\t" <<
-			p[k].getXD() << "\t" << p[k].getYD() << endl;
+		out << p.at(k).getXA() << "\t" << p.at(k).getYA() << "\t" <<
+			p.at(k).getXB() << "\t" << p.at(k).getYB() << "\t" <<
+			p.at(k).getXC() << "\t" << p.at(k).getYC() << "\t" <<
+			p.at(k).getXD() << "\t" << p.at(k).getYD() << endl;
 	}
 
 	out.close();

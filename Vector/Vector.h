@@ -56,7 +56,9 @@ public:
 	void print() {
 		for (int i = 0; i < cur_size; i++)
 			cout <<left<<setw(5)<< els[i].area()<<endl;
-
+	}
+	int size() {
+		return cur_size;
 	}
 	//destructor
 	~Vector() {
